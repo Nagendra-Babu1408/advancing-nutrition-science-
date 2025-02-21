@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🍏 AI-Powered Nutrition Analysis</h1>
+
+        <!-- ✅ BMI Form -->
+        <div class="section">
+            <h2>📊 Calculate Your BMI</h2>
+            <input type="number" id="weight" placeholder="Weight (kg)">
+            <input type="number" id="height" placeholder="Height (cm)">
+            <input type="number" id="age" placeholder="Age">
+            <select id="activity">
+                <option value="sedentary">Sedentary</option>
+                <option value="moderate">Moderate</option>
+                <option value="active">Active</option>
+            </select>
+            <button onclick="calculateBMI()">Calculate</button>
+            <p id="bmiResult"></p>
+        </div>
+
+        <!-- ✅ Text Analysis Form -->
+        <div class="section">
+            <h2>📝 AI Text Analysis</h2>
+            <textarea id="textPrompt" placeholder="Enter text for analysis..."></textarea>
+            <button onclick="analyzeText()">Analyze</button>
+            <p id="textResult"></p>
+        </div>
+
+        <!-- ✅ Image Analysis Form -->
+        <div class="section">
+            <h2>📸 Image-Based Nutrition Analysis</h2>
+            <input type="file" id="imageUpload">
+            <button onclick="analyzeImage()">Analyze Image</button>
+            <p id="imageResult"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
